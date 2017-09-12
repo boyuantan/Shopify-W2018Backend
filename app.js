@@ -64,7 +64,7 @@ app.get('/', function(req, res) {
 				nextPromise(url, page);
 			}).then(function() {
 				if (page.done) { // Respond when fully completed
-					res.send(invalids);
+					res.send({ "invalid_customers" : invalids});
 				}
 			}).catch(function(err) {
 				res.status(500).send(err);
